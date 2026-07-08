@@ -145,9 +145,16 @@ main.container {
   height: 62px;
 }
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
   font-weight: 650;
   letter-spacing: -0.01em;
   font-size: 1.02rem;
+}
+.brand-mark {
+  flex-shrink: 0;
+  display: block;
 }
 .brand:hover {
   color: var(--accent-bright);
