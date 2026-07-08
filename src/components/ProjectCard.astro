@@ -1,0 +1,31 @@
+---
+interface Props {
+  href: string;
+  title: string;
+  description: string;
+  tags: string[];
+  year?: number;
+  label?: string;
+}
+
+const { href, title, description, tags, year, label } = Astro.props;
+---
+
+<a href={href} class="card">
+  {label && <span class="card-label">{label}</span>}
+  <div class="card-head">
+    <h3 class="card-title">{title}</h3>
+    {year && <span class="meta">{year}</span>}
+  </div>
+  <p class="card-desc">{description}</p>
+  {
+    tags.length > 0 && (
+      <ul class="tag-row">
+        {tags.map((t) => (
+          <li class="tag">{t}</li>
+        ))}
+      </ul>
+    )
+  }
+  <span class="card-cta">View project &rarr;</span>
+</a>

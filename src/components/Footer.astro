@@ -1,0 +1,16 @@
+---
+import { site } from '../config';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <span class="meta">&copy; {year} {site.name}</span>
+    <div class="footer-links">
+      {site.socials.github && <a href={site.socials.github} target="_blank" rel="noopener">GitHub</a>}
+      {site.socials.linkedin && <a href={site.socials.linkedin} target="_blank" rel="noopener">LinkedIn</a>}
+      {site.email && <a href={`mailto:${site.email}`}>Email</a>}
+    </div>
+  </div>
+</footer>

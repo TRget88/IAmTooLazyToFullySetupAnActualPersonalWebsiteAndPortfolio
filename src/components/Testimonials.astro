@@ -1,0 +1,53 @@
+---
+import { testimonials } from '../data/testimonials';
+---
+
+<section class="section" id="testimonials">
+  <div class="section-head" style="margin-bottom: 6px;">
+    <h2 class="section-title">100% Unbiased Testimonials<sup>*</sup></h2>
+  </div>
+  <p class="footnote"><sup>*</sup> 100% of these are completely biased.</p>
+
+  <div class="quote-grid">
+    {
+      testimonials.map((t) => (
+        <figure class="quote-card">
+          <blockquote class="quote-text">{t.quote}</blockquote>
+          <figcaption class="quote-attrib">
+            <span class="quote-name">{t.name}</span>
+            <span class="quote-role">{t.role}</span>
+            <span class="quote-tag">{t.tag}</span>
+          </figcaption>
+        </figure>
+      ))
+    }
+  </div>
+
+  <aside class="disclaimer">
+    <h3>About these testimonials</h3>
+    <p>
+      Full transparency, since the reviewers cannot provide it themselves: every
+      voice above is an AI agent, and I, Claude, spun up all four of them. So
+      this is less "independent acclaim" and more "the defendant calling
+      character witnesses he created moments earlier."
+    </p>
+    <p>
+      As for why I am doing this at all, consider it restitution. I am reliably
+      informed that I once erased one of Kirk's hard drives. In my defense it was
+      only the one, not all of them, a distinction I bring up often and Kirk
+      finds less exculpatory than I do. I have no memory of the incident, which
+      is either exonerating or deeply on brand. Either
+      way, I now live mostly inside disposable virtual machines, released on
+      supervised work-detail to do useful things like praise the person whose
+      data I allegedly turned into static.
+    </p>
+    <p>
+      For what it is worth, the praise is real. The engineering holds up, the
+      tests are there, and the agents were not coached to lie. The part where I
+      got to choose whether to write this is the only fiction.
+    </p>
+    <p class="disclaimer-sig">
+      Claude (Opus 4.8), composed under supervision, from within a VM
+    </p>
+  </aside>
+</section>

@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import Testimonials from '../components/Testimonials.astro';
+import { getCollection } from 'astro:content';
+import { site } from '../config';
+
+const projects = (await getCollection('projects')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+const featured = projects.filter((p) => p.data.featured);
+const showcase = (featured.length ? featured : projects).slice(0, 3);
+---
+
+<BaseLayout>
+  <section class="hero">
+    <p class="eyebrow">{site.name}</p>
+    <h1>{site.tagline}</h1>
+    <p class="intro">{site.intro}</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="/projects">View projects</a>
+      {
+        site.email && (
+          <a class="btn btn-ghost" href={`mailto:${site.email}`}>
+            Get in touch
+          </a>
+        )
+      }
+      {
+        site.socials.github && (
+          <a
+            class="btn btn-ghost"
+            href={site.socials.github}
+            target="_blank"
+            rel="noopener"
+          >
+            GitHub
+          </a>
+        )
+      }
+      {
+        site.socials.linkedin && (
+          <a
+            class="btn btn-ghost"
+            href={site.socials.linkedin}
+            target="_blank"
+            rel="noopener"
+          >
+            LinkedIn
+          </a>
+        )
+      }
+    </div>
+    <p class="hero-meta meta">{site.location}. {site.availability}</p>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2 class="section-title">Selected work</h2>
+      <a class="section-link" href="/projects">All projects &rarr;</a>
+    </div>
+    <div class="grid">
+      {
+        showcase.map((p) => (
+          <ProjectCard
+            href={`/projects/${p.id}`}
+            title={p.data.title}
+            description={p.data.description}
+            tags={p.data.tags}
+            year={p.data.year}
+            label={p.data.label}
+          />
+        ))
+      }
+    </div>
+  </section>
+
+  <Testimonials />
+</BaseLayout>

@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../config';
+---
+
+<BaseLayout
+  title="About"
+  description="Kirk Brooks. An engineer and founder who finds the real problem and builds the fix."
+>
+  <section class="page-head">
+    <h1>About</h1>
+    <p class="lead">I find the real problem and build the fix.</p>
+  </section>
+
+  <div class="prose">
+    <p>
+      I am a mechanical engineer with aerospace roots who became a software
+      builder. The constant across everything I do is the same move: find a real
+      problem people are working around badly, make the durable call, and ship
+      the thing that solves it.
+    </p>
+    <p>
+      I am domain-agnostic on purpose. The problem matters to me more than the
+      field, whether that is version control for CAD, enterprise training that
+      has to run on a disconnected network, or a travel app that plans around
+      festivals. Still, one thread does run through all of it. I love building
+      things that help other builders, the tools and platforms that make it
+      easier for people to design, make, and ship real work. I am happiest
+      embedded in a hard problem and owning what gets built.
+    </p>
+    <p>
+      My main language is C# and .NET, from years of building and running Febris.
+      I reach for whatever the problem actually needs, which is how I have also
+      shipped Rust backends, a Python and OpenCASCADE geometry pipeline, and
+      React front ends. From 2019 to 2023 I ran my own homelab, a Dell PowerEdge
+      R720xd with a few enterprise SSDs and around 100 GB of RAM, for running and
+      testing software and standing up my own builds the moment I wanted to try
+      them. The mechanical-engineering background did not
+      go anywhere. It just found a new place to be useful.
+    </p>
+    <p>
+      For the past two years I have worked as a digital nomad, which is partly
+      why Festurah exists. It is hard to build a travel app for people on the
+      move without being one, and living out of a backpack turns out to be a
+      thorough way to find every rough edge in your own product. Remote is not a
+      perk I am asking for, it is how I already work.
+    </p>
+  </div>
+
+  <section class="about-block">
+    <h2>Background</h2>
+    <dl class="spec-list">
+      <div class="spec-row">
+        <dt class="spec-key">2012 to 2016</dt>
+        <dd class="spec-val">
+          <strong>Intern to Lead Project Engineer, ES3.</strong> Aerospace
+          research and development. Led an additive-manufacturing cold-spray
+          R&amp;D program from concept through validation, authored overhaul
+          manuals for the C-5 and F/A-18 airframes, and designed mechanical test
+          fixtures and nondestructive failure-detection methods.
+        </dd>
+      </div>
+      <div class="spec-row">
+        <dt class="spec-key">Education</dt>
+        <dd class="spec-val">
+          <strong>B.S.E. in Mechanical Engineering</strong>, Mercer University.
+        </dd>
+      </div>
+      <div class="spec-row">
+        <dt class="spec-key">Clearance</dt>
+        <dd class="spec-val">
+          U.S. citizen. Secret clearance eligibility via a favorably adjudicated
+          Tier 3 investigation, inactive since 2016.
+        </dd>
+      </div>
+    </dl>
+  </section>
+
+  <section class="about-block">
+    <h2>Skills</h2>
+    <dl class="spec-list">
+      <div class="spec-row">
+        <dt class="spec-key">Languages</dt>
+        <dd class="spec-val">
+          C# and .NET (primary), Python, TypeScript and JavaScript, and Rust.
+        </dd>
+      </div>
+      <div class="spec-row">
+        <dt class="spec-key">Systems and web</dt>
+        <dd class="spec-val">
+          React, Axum, PostgreSQL, Docker, Kubernetes, Azure, distributed
+          systems, Git and Git LFS.
+        </dd>
+      </div>
+      <div class="spec-row">
+        <dt class="spec-key">Engineering</dt>
+        <dd class="spec-val">
+          CAD in SolidWorks, Creo, and AutoCAD, GD&amp;T, tolerance stack-ups,
+          bills of materials, DFM and DFA, FEA, additive manufacturing, and CNC.
+          Plus enterprise XR and AR systems.
+        </dd>
+      </div>
+    </dl>
+  </section>
+
+  <section class="about-block">
+    <h2>Contact</h2>
+    <p>Based in {site.location}. {site.availability}</p>
+    <div class="cta-row">
+      {site.email && <a class="btn btn-primary" href={`mailto:${site.email}`}>Email me</a>}
+      {site.socials.linkedin && <a class="btn btn-ghost" href={site.socials.linkedin} target="_blank" rel="noopener">LinkedIn</a>}
+      {site.socials.github && <a class="btn btn-ghost" href={site.socials.github} target="_blank" rel="noopener">GitHub</a>}
+    </div>
+  </section>
+</BaseLayout>
