@@ -5,7 +5,7 @@ tags: ['C#', '.NET', 'Azure', 'Kubernetes', 'XR / AR']
 featured: true
 year: 2019
 order: 2
-label: 'My company'
+label: 'Company'
 link: 'https://febr.is'
 ---
 
